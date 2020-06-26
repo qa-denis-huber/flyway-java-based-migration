@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: de.denis.poc
+---
+testFramework: junit
+sourceLanguage: java

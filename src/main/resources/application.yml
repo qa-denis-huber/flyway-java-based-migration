@@ -1,0 +1,25 @@
+---
+micronaut:
+  application:
+    name: flyway-migration
+
+---
+# h2
+datasources:
+  default:
+    url: jdbc:h2:mem:default;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+jpa:
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        show_sql: true
+flyway:
+  datasources:
+    default:
+      cleanOnValidationError: true # use only for development, never in production!
+      locations: ["classpath:flyway"]
